@@ -3,14 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbxm_zr6fQkkUo6VKnXeaL51GJZdSTip2_7QMCe5Ta40KPQHeE4lXuI7__6p-WLYm9mXXg/exec">
-  <script type="text/javascript">
-    window.location.replace("https://script.google.com/macros/s/AKfycbxm_zr6fQkkUo6VKnXeaL51GJZdSTip2_7QMCe5Ta40KPQHeE4lXuI7__6p-WLYm9mXXg/exec");
-  </script>
-  <title>Formulir Pendaftaran KEMBARANAS III - 2026</title>
+  <title>Formulir KEMBARANAS III - 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', sans-serif; } </style>
 </head>
-<body style="background-color: #fefce8; font-family: sans-serif; text-align: center; padding-top: 50px;">
-  <p style="color: #78350f; font-weight: bold;">Mengarahkan ke Formulir Pendaftaran KEMBARANAS III...</p>
-  <p style="font-size: 14px; color: #a16207;">Jika halaman tidak teralih otomatis, <a href="https://script.google.com/macros/s/AKfycbxm_zr6fQkkUo6VKnXeaL51GJZdSTip2_7QMCe5Ta40KPQHeE4lXuI7__6p-WLYm9mXXg/exec">klik tautan ini</a>.</p>
+<body class="bg-amber-50/50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-100">
+    
+    <!-- BANNER HEADER -->
+    <div class="bg-gradient-to-r from-amber-600 to-amber-700 p-6 text-white flex flex-col sm:flex-row items-center gap-5">
+      <div class="bg-white/90 p-2 rounded-xl shadow-md flex-shrink-0">
+        <img src="https://lh3.googleusercontent.com/d/1nJu5ER7lWJtRUCFPBUD1KDBGdfdCnpFh" alt="Logo KEMBARANAS III" class="h-24 w-auto object-contain">
+      </div>
+      <div class="text-center sm:text-left flex-1">
+        <span class="bg-amber-800/60 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Formulir Pendaftaran</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold mt-2 leading-tight">KEMBARANAS III - 2026</h1>
+        <p class="text-amber-100 text-sm mt-1">SAKO SIT Indonesia • Lampung, 27 - 31 Oktober 2026</p>
+      </div>
+    </div>
+
+    <!-- FORM CONTAINER -->
+    <form id="regForm" class="p-6 sm:p-8 space-y-6" onsubmit="handleFormSubmit(event)">
+      
+      <!-- STATUS PENDAFTARAN -->
+      <div class="bg-amber-50/60 p-5 rounded-xl border border-amber-200/60">
+        <label class="block text-sm font-bold text-gray-800 mb-3">STATUS PENDAFTARAN <span class="text-red-500">*</span></label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="flex items-center p-3 bg-white rounded-lg border border-gray-200 cursor-pointer hover:border-amber-500 transition-all">
+            <input type="radio" name="statusPendaftaran" value="Peserta" required onchange="toggleSection(this.value)" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
+            <span class="ml-3 font-medium text-gray-700">Peserta</span>
+          </label>
+          <label class="flex items-center p-3 bg-white rounded-lg border border-gray-200 cursor-pointer hover:border-amber-500 transition-all">
+            <input type="radio" name="statusPendaftaran" value="Pembina Pendamping" required onchange="toggleSection(this.value)" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
+            <span class="ml-3 font-medium text-gray-700">Pembina Pendamping</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- SECTION PESERTA -->
+      <div id="sectionPeserta" class="hidden space-y-4 border-l-4 border-amber-500 pl-4 py-2">
+        <h3 class="font-bold text-lg text-amber-900 border-b pb-2">Data Peserta</h3>
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nama Lengkap Peserta (HURUF KAPITAL) <span class="text-red-500">*</span></label>
+          <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase" placeholder="CONTOH: AHMAD MUJAHID">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nomor KTA (Jika Ada)</label>
+          <input type="text" name="nomorKta" id="nomorKta" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tempat Lahir (HURUF KAPITAL) <span class="text-red-500">*</span></label>
+            <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tanggal Lahir <span class="text-red-500">*</span></label>
+            <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION PEMBINA -->
+      <div id="sectionPembina" class="hidden space-y-4 border-l-4 border-amber-500 pl-4 py-2">
+        <h3 class="font-bold text-lg text-amber-900 border-b pb-2">Data Pembina Pendamping</h3>
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nama Lengkap dan Gelar (HURUF KAPITAL) <span class="text-red-500">*</span></label>
+          <input type="text" name="namaPembina" id="namaPembina" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase" placeholder="CONTOH: AHMAD MUJAHID, S.Pd.">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nomor HP PEMBINA (WhatsApp) <span class="text-red-500">*</span></label>
+          <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500" placeholder="081234567890">
+        </div>
+      </div>
+
+      <!-- SECTION IDENTITAS UMUM -->
+      <div id="sectionIdentitas" class="space-y-4 pt-2">
+        <h3 class="font-bold text-lg text-amber-900 border-b pb-2">Identitas & Data Sekolah</h3>
+        
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
+          <div class="flex gap-6">
+            <label class="inline-flex items-center"><input type="radio" name="jenisKelamin" value="Laki-Laki" required class="w-4 h-4 text-amber-600"><span class="ml-2 text-sm text-gray-700">Laki-Laki</span></label>
+            <label class="inline-flex items-center"><input type="radio" name="jenisKelamin" value="Perempuan" required class="w-4 h-4 text-amber-600"><span class="ml-2 text-sm text-gray-700">Perempuan</span></label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Asal Sekolah (HURUF KAPITAL) <span class="text-red-500">*</span></label>
+          <input type="text" name="asalSekolah" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase" placeholder="CONTOH: SMPIT AL-ILMU">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Provinsi <span class="text-red-500">*</span></label>
+            <select name="provinsi" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white">
+              <option value="">-- Pilih Provinsi --</option>
+              <option value="ACEH">ACEH</option><option value="SUMATERA UTARA">SUMATERA UTARA</option><option value="SUMATERA SELATAN">SUMATERA SELATAN</option><option value="SUMATERA BARAT">SUMATERA BARAT</option><option value="BENGKULU">BENGKULU</option><option value="RIAU">RIAU</option><option value="KEPULAUAN RIAU">KEPULAUAN RIAU</option><option value="JAMBI">JAMBI</option><option value="LAMPUNG">LAMPUNG</option><option value="BANGKA BELITUNG">BANGKA BELITUNG</option><option value="KALIMANTAN BARAT">KALIMANTAN BARAT</option><option value="KALIMANTAN TIMUR">KALIMANTAN TIMUR</option><option value="KALIMANTAN SELATAN">KALIMANTAN SELATAN</option><option value="KALIMANTAN TENGAH">KALIMANTAN TENGAH</option><option value="KALIMANTAN UTARA">KALIMANTAN UTARA</option><option value="BANTEN">BANTEN</option><option value="DKI JAKARTA">DKI JAKARTA</option><option value="JAWA BARAT">JAWA BARAT</option><option value="JAWA TENGAH">JAWA TENGAH</option><option value="DAERAH ISTIMEWA YOGYAKARTA">DAERAH ISTIMEWA YOGYAKARTA</option><option value="JAWA TIMUR">JAWA TIMUR</option><option value="BALI">BALI</option><option value="NUSA TENGGARA TIMUR">NUSA TENGGARA TIMUR</option><option value="NUSA TENGGARA BARAT">NUSA TENGGARA BARAT</option><option value="GORONTALO">GORONTALO</option><option value="SULAWESI BARAT">SULAWESI BARAT</option><option value="SULAWESI TENGAH">SULAWESI TENGAH</option><option value="SULAWESI UTARA">SULAWESI UTARA</option><option value="SULAWESI TENGGARA">SULAWESI TENGGARA</option><option value="SULAWESI SELATAN">SULAWESI SELATAN</option><option value="MALUKU UTARA">MALUKU UTARA</option><option value="MALUKU">MALUKU</option><option value="PAPUA BARAT">PAPUA BARAT</option><option value="PAPUA">PAPUA</option><option value="PAPUA TENGAH">PAPUA TENGAH</option><option value="PAPUA PEGUNUNGAN">PAPUA PEGUNUNGAN</option><option value="PAPUA SELATAN">PAPUA SELATAN</option><option value="PAPUA BARAT DAYA">PAPUA BARAT DAYA</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Kota / Kabupaten (HURUF KAPITAL) <span class="text-red-500">*</span></label>
+            <input type="text" name="kotaKabupaten" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase">
+          </div>
+        </div>
+
+        <!-- UKURAN KAOS -->
+        <div>
+          <label class="block text-xs font-semibold uppercase text-gray-600 mb-2">Ukuran KAOS <span class="text-red-500">*</span></label>
+          <div class="mb-4 overflow-hidden rounded-xl border border-gray-200 shadow-sm bg-white p-3 text-center">
+            <img src="https://lh3.googleusercontent.com/d/11kNUj0C36Pigj_dfc_LTwS7AvyF81kbH" alt="Tabel Ukuran Kaos" class="w-full h-auto max-h-80 object-contain mx-auto rounded-lg">
+            <p class="text-[11px] text-gray-500 italic mt-2">NB: Kaos Putri berlengan panjang dan panjang kaos akan ditambah -/+ 10 cm</p>
+          </div>
+          <div id="kaosContainer" class="grid grid-cols-4 sm:grid-cols-8 gap-2"></div>
+        </div>
+      </div>
+
+      <!-- UPLOAD BUKTI TRANSFER -->
+      <div class="border-t pt-4">
+        <label class="block text-sm font-bold text-gray-800 mb-1">Upload Bukti Transfer <span class="text-red-500">*</span></label>
+        <p class="text-xs text-gray-500 mb-2">Format Nama File: <i>Asal Sekolah (Jumlah Peserta + Bindamping)</i><br>Contoh: <b>SMPIT AL-ILMU (10 orang).jpg</b></p>
+        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-100 file:text-amber-800 hover:file:bg-amber-200 cursor-pointer">
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+      <div class="pt-4">
+        <button type="submit" id="submitBtn" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all duration-200 flex justify-center items-center">
+          <span>Kirim Pendaftaran</span>
+        </button>
+      </div>
+    </form>
+
+    <!-- SUCCESS / ERROR MESSAGE -->
+    <div id="responseMsg" class="hidden p-8 text-center"></div>
+  </div>
+
+  <script>
+    // ⚠️ GANTI URL DI BAWAH INI DENGAN WEB APP URL HASIL DEPLOY APPS SCRIPT
+    const GAS_URL = "PASTE_URL_WEB_APP_APPS_SCRIPT_DISINI";
+
+    const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
+    const kaosContainer = document.getElementById('kaosContainer');
+    sizes.forEach(sz => {
+      kaosContainer.innerHTML += `
+        <label class="text-center p-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-amber-500 transition-all block bg-white hover:bg-amber-50 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-100/80 has-[:checked]:ring-2 has-[:checked]:ring-amber-500">
+          <input type="radio" name="ukuranKaos" value="${sz}" required class="sr-only peer">
+          <span class="text-sm font-medium text-gray-700 peer-checked:text-amber-900 peer-checked:font-bold block">${sz}</span>
+        </label>
+      `;
+    });
+
+    function toggleSection(value) {
+      const p = document.getElementById('sectionPeserta');
+      const b = document.getElementById('sectionPembina');
+      const reqP = ['namaPeserta', 'tempatLahir', 'tanggalLahir'];
+      const reqB = ['namaPembina', 'nomorHp'];
+
+      if (value === 'Peserta') {
+        p.classList.remove('hidden');
+        b.classList.add('hidden');
+        reqP.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
+        reqB.forEach(id => document.getElementById(id).removeAttribute('required'));
+      } else if (value === 'Pembina Pendamping') {
+        b.classList.remove('hidden');
+        p.classList.add('hidden');
+        reqB.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
+        reqP.forEach(id => document.getElementById(id).removeAttribute('required'));
+      }
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Memproses & Mengunggah Data...</span>`;
+
+      const fileInput = document.getElementById('buktiTransfer');
+      const file = fileInput.files[0];
+
+      const formData = {
+        statusPendaftaran: form.statusPendaftaran.value,
+        namaLengkap: form.statusPendaftaran.value === 'Peserta' ? form.namaPeserta.value : form.namaPembina.value,
+        nomorKta: form.nomorKta ? form.nomorKta.value : '',
+        tempatLahir: form.tempatLahir ? form.tempatLahir.value : '',
+        tanggalLahir: form.tanggalLahir ? form.tanggalLahir.value : '',
+        nomorHp: form.nomorHp ? form.nomorHp.value : '',
+        jenisKelamin: form.jenisKelamin.value,
+        asalSekolah: form.asalSekolah.value,
+        provinsi: form.provinsi.value,
+        kotaKabupaten: form.kotaKabupaten.value,
+        ukuranKaos: form.ukuranKaos.value
+      };
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          formData.fileData = e.target.result;
+          formData.fileName = file.name;
+          sendDataToGAS(formData);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        sendDataToGAS(formData);
+      }
+    }
+
+    function sendDataToGAS(formData) {
+      fetch(GAS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      .then(() => {
+        document.getElementById('regForm').classList.add('hidden');
+        const msgBox = document.getElementById('responseMsg');
+        msgBox.classList.remove('hidden');
+        msgBox.innerHTML = `
+          <div class="text-green-600 text-6xl mb-4">✓</div>
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">Pendaftaran Berhasil!</h2>
+          <p class="text-gray-600">Data pendaftaran & berkas Anda telah berhasil tersimpan.</p>
+          <button onclick="location.reload()" class="mt-6 bg-amber-600 hover:bg-amber-700 text-white font-medium px-6 py-2.5 rounded-lg transition-all shadow-md">Isi Form Lagi</button>
+        `;
+      })
+      .catch(err => {
+        alert("Gagal mengirim data: " + err);
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Kirim Pendaftaran</span>';
+      });
+    }
+  </script>
 </body>
 </html>
