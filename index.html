@@ -4,132 +4,290 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulir KEMBARANAS III - 2026</title>
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style> body { font-family: 'Inter', sans-serif; } </style>
+  <!-- FontAwesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .scout-pattern {
+      background-color: #fefce8;
+      background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#d97706 0.75px, #fef3c7 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+  </style>
 </head>
-<body class="bg-amber-50/50 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-100">
+<body class="scout-pattern min-h-screen py-6 px-3 sm:px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto bg-white/95 backdrop-blur rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-800/20">
     
-    <!-- BANNER HEADER -->
-    <div class="bg-gradient-to-r from-amber-600 to-amber-700 p-6 text-white flex flex-col sm:flex-row items-center gap-5">
-      <div class="bg-white/90 p-2 rounded-xl shadow-md flex-shrink-0">
-        <img src="https://lh3.googleusercontent.com/d/1nJu5ER7lWJtRUCFPBUD1KDBGdfdCnpFh" alt="Logo KEMBARANAS III" class="h-24 w-auto object-contain">
+    <!-- BANNER HEADER PRAMUKA -->
+    <div class="bg-gradient-to-r from-amber-950 via-amber-900 to-emerald-950 p-6 sm:p-8 text-white relative overflow-hidden border-b-4 border-amber-500">
+      <div class="absolute -right-6 -bottom-6 opacity-10 text-amber-100 pointer-events-none">
+        <i class="fa-solid fa-compass text-9xl"></i>
       </div>
-      <div class="text-center sm:text-left flex-1">
-        <span class="bg-amber-800/60 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Formulir Pendaftaran</span>
-        <h1 class="text-2xl sm:text-3xl font-extrabold mt-2 leading-tight">KEMBARANAS III - 2026</h1>
-        <p class="text-amber-100 text-sm mt-1">SAKO SIT Indonesia • Lampung, 27 - 31 Oktober 2026</p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-5 relative z-10">
+        <!-- LOGO KEMBARANAS III -->
+        <div class="flex-shrink-0 bg-white/10 p-2 rounded-2xl border border-amber-400/30 backdrop-blur-sm shadow-xl">
+          <img id="logoKembaranas" 
+               src="https://lh3.googleusercontent.com/d/1nJu5ER7lWJtRUCFPBUD1KDBGdfdCnpFh" 
+               alt="Logo KEMBARANAS III 2026" 
+               class="w-24 h-24 sm:w-28 sm:h-28 object-contain rounded-xl">
+        </div>
+
+        <!-- JUDUL FORMULIR -->
+        <div class="text-center sm:text-left">
+          <span class="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 border border-amber-400/40 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            <i class="fa-solid fa-campground text-amber-400"></i> SAKO SIT Indonesia
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-amber-100 mt-2 tracking-wide uppercase">
+            Formulir Pendaftaran<br>
+            <span class="text-amber-400">KEMBARANAS III - 2026</span>
+          </h1>
+          <p class="text-amber-200/90 text-xs sm:text-sm mt-1 flex items-center justify-center sm:justify-start gap-1.5 font-medium">
+            <i class="fa-solid fa-location-dot text-amber-400"></i> Bumi Perkemahan Lampung • 27 - 31 Oktober 2026
+          </p>
+        </div>
       </div>
     </div>
 
+    <!-- SUB-BANNER SALAM PRAMUKA -->
+    <div class="bg-amber-800 text-amber-100 px-6 py-2.5 text-xs sm:text-sm font-semibold flex justify-between items-center border-b border-amber-700">
+      <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-400"></i> Salam Pramuka!</span>
+      <span class="text-amber-200/80 italic font-normal">Perkemahan Bakti & Pengembaraan Nasional</span>
+    </div>
+
     <!-- FORM CONTAINER -->
-    <form id="regForm" class="p-6 sm:p-8 space-y-6" onsubmit="handleFormSubmit(event)">
+    <form id="regForm" class="p-6 sm:p-8 space-y-6" onsubmit="handleFormSubmit(this, event)">
       
-      <!-- STATUS PENDAFTARAN -->
-      <div class="bg-amber-50/60 p-5 rounded-xl border border-amber-200/60">
-        <label class="block text-sm font-bold text-gray-800 mb-3">STATUS PENDAFTARAN <span class="text-red-500">*</span></label>
+      <!-- SECTION 1: JENIS PENDAFTARAN -->
+      <div class="bg-amber-50/80 p-5 rounded-2xl border border-amber-200">
+        <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
+          <i class="fa-solid fa-users text-amber-700"></i> JENIS PENDAFTARAN <span class="text-red-500">*</span>
+        </label>
+        <p class="text-xs text-gray-600 mb-3">Pilih kategori keikutsertaan Anda</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <label class="flex items-center p-3 bg-white rounded-lg border border-gray-200 cursor-pointer hover:border-amber-500 transition-all">
-            <input type="radio" name="statusPendaftaran" value="Peserta" required onchange="toggleSection(this.value)" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
-            <span class="ml-3 font-medium text-gray-700">Peserta</span>
+          <label class="flex items-center p-3.5 bg-white rounded-xl border-2 border-amber-100 cursor-pointer hover:border-amber-500 transition-all shadow-sm">
+            <input type="radio" name="jenisPendaftaran" value="Individu" required onchange="toggleJenisPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
+            <span class="ml-3 font-semibold text-gray-800 text-sm">Individu (Perorangan)</span>
           </label>
-          <label class="flex items-center p-3 bg-white rounded-lg border border-gray-200 cursor-pointer hover:border-amber-500 transition-all">
-            <input type="radio" name="statusPendaftaran" value="Pembina Pendamping" required onchange="toggleSection(this.value)" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
-            <span class="ml-3 font-medium text-gray-700">Pembina Pendamping</span>
+          <label class="flex items-center p-3.5 bg-white rounded-xl border-2 border-amber-100 cursor-pointer hover:border-amber-500 transition-all shadow-sm">
+            <input type="radio" name="jenisPendaftaran" value="Kolektif" required onchange="toggleJenisPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
+            <span class="ml-3 font-semibold text-gray-800 text-sm">Kolektif (1 Sangga + Bindam)</span>
           </label>
         </div>
       </div>
 
-      <!-- SECTION PESERTA -->
-      <div id="sectionPeserta" class="hidden space-y-4 border-l-4 border-amber-500 pl-4 py-2">
-        <h3 class="font-bold text-lg text-amber-900 border-b pb-2">Data Peserta</h3>
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nama Lengkap Peserta (HURUF KAPITAL) <span class="text-red-500">*</span></label>
-          <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase" placeholder="CONTOH: AHMAD MUJAHID">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nomor KTA (Jika Ada)</label>
-          <input type="text" name="nomorKta" id="nomorKta" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tempat Lahir (HURUF KAPITAL) <span class="text-red-500">*</span></label>
-            <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Tanggal Lahir <span class="text-red-500">*</span></label>
-            <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION PEMBINA -->
-      <div id="sectionPembina" class="hidden space-y-4 border-l-4 border-amber-500 pl-4 py-2">
-        <h3 class="font-bold text-lg text-amber-900 border-b pb-2">Data Pembina Pendamping</h3>
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nama Lengkap dan Gelar (HURUF KAPITAL) <span class="text-red-500">*</span></label>
-          <input type="text" name="namaPembina" id="namaPembina" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase" placeholder="CONTOH: AHMAD MUJAHID, S.Pd.">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Nomor HP PEMBINA (WhatsApp) <span class="text-red-500">*</span></label>
-          <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500" placeholder="081234567890">
-        </div>
-      </div>
-
-      <!-- SECTION IDENTITAS UMUM -->
-      <div id="sectionIdentitas" class="space-y-4 pt-2">
-        <h3 class="font-bold text-lg text-amber-900 border-b pb-2">Identitas & Data Sekolah</h3>
+      <!-- WRAPPER PENDAFTARAN INDIVIDU -->
+      <div id="wrapperIndividu" class="hidden space-y-6">
         
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
-          <div class="flex gap-6">
-            <label class="inline-flex items-center"><input type="radio" name="jenisKelamin" value="Laki-Laki" required class="w-4 h-4 text-amber-600"><span class="ml-2 text-sm text-gray-700">Laki-Laki</span></label>
-            <label class="inline-flex items-center"><input type="radio" name="jenisKelamin" value="Perempuan" required class="w-4 h-4 text-amber-600"><span class="ml-2 text-sm text-gray-700">Perempuan</span></label>
+        <!-- SECTION 2: STATUS PENDAFTARAN -->
+        <div class="bg-amber-50/80 p-5 rounded-2xl border border-amber-200">
+          <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-user-shield text-amber-700"></i> STATUS PENDAFTARAN <span class="text-red-500">*</span>
+          </label>
+          <p class="text-xs text-gray-600 mb-3">Pilih peran Anda dalam kegiatan perkemahan ini</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex items-center p-3.5 bg-white rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 transition-all shadow-sm">
+              <input type="radio" name="statusPendaftaran" value="Peserta" onchange="toggleStatusPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
+              <span class="ml-3 font-semibold text-gray-800 text-sm">Peserta</span>
+            </label>
+            <label class="flex items-center p-3.5 bg-white rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 transition-all shadow-sm">
+              <input type="radio" name="statusPendaftaran" value="Pembina Pendamping" onchange="toggleStatusPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
+              <span class="ml-3 font-semibold text-gray-800 text-sm">Pembina Pendamping</span>
+            </label>
           </div>
         </div>
 
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Asal Sekolah (HURUF KAPITAL) <span class="text-red-500">*</span></label>
-          <input type="text" name="asalSekolah" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase" placeholder="CONTOH: SMPIT AL-ILMU">
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- SECTION 3: DATA PESERTA -->
+        <div id="sectionPeserta" class="hidden space-y-4 border-l-4 border-amber-600 pl-4 py-2 bg-amber-50/30 rounded-r-xl">
+          <h3 class="font-bold text-base text-amber-950 flex items-center gap-2 border-b pb-2">
+            <i class="fa-solid fa-id-card text-amber-700"></i> Data Diri Peserta
+          </h3>
           <div>
-            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Provinsi <span class="text-red-500">*</span></label>
-            <select name="provinsi" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white">
-              <option value="">-- Pilih Provinsi --</option>
-              <option value="ACEH">ACEH</option><option value="SUMATERA UTARA">SUMATERA UTARA</option><option value="SUMATERA SELATAN">SUMATERA SELATAN</option><option value="SUMATERA BARAT">SUMATERA BARAT</option><option value="BENGKULU">BENGKULU</option><option value="RIAU">RIAU</option><option value="KEPULAUAN RIAU">KEPULAUAN RIAU</option><option value="JAMBI">JAMBI</option><option value="LAMPUNG">LAMPUNG</option><option value="BANGKA BELITUNG">BANGKA BELITUNG</option><option value="KALIMANTAN BARAT">KALIMANTAN BARAT</option><option value="KALIMANTAN TIMUR">KALIMANTAN TIMUR</option><option value="KALIMANTAN SELATAN">KALIMANTAN SELATAN</option><option value="KALIMANTAN TENGAH">KALIMANTAN TENGAH</option><option value="KALIMANTAN UTARA">KALIMANTAN UTARA</option><option value="BANTEN">BANTEN</option><option value="DKI JAKARTA">DKI JAKARTA</option><option value="JAWA BARAT">JAWA BARAT</option><option value="JAWA TENGAH">JAWA TENGAH</option><option value="DAERAH ISTIMEWA YOGYAKARTA">DAERAH ISTIMEWA YOGYAKARTA</option><option value="JAWA TIMUR">JAWA TIMUR</option><option value="BALI">BALI</option><option value="NUSA TENGGARA TIMUR">NUSA TENGGARA TIMUR</option><option value="NUSA TENGGARA BARAT">NUSA TENGGARA BARAT</option><option value="GORONTALO">GORONTALO</option><option value="SULAWESI BARAT">SULAWESI BARAT</option><option value="SULAWESI TENGAH">SULAWESI TENGAH</option><option value="SULAWESI UTARA">SULAWESI UTARA</option><option value="SULAWESI TENGGARA">SULAWESI TENGGARA</option><option value="SULAWESI SELATAN">SULAWESI SELATAN</option><option value="MALUKU UTARA">MALUKU UTARA</option><option value="MALUKU">MALUKU</option><option value="PAPUA BARAT">PAPUA BARAT</option><option value="PAPUA">PAPUA</option><option value="PAPUA TENGAH">PAPUA TENGAH</option><option value="PAPUA PEGUNUNGAN">PAPUA PEGUNUNGAN</option><option value="PAPUA SELATAN">PAPUA SELATAN</option><option value="PAPUA BARAT DAYA">PAPUA BARAT DAYA</option>
-            </select>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Nama Lengkap Peserta <span class="text-red-500">*</span></label>
+            <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 uppercase font-medium" placeholder="GUNAKAN HURUF KAPITAL">
           </div>
-
           <div>
-            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Kota / Kabupaten (HURUF KAPITAL) <span class="text-red-500">*</span></label>
-            <input type="text" name="kotaKabupaten" required class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 uppercase">
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Nomor KTA Pramuka (Wajib)</label>
+            <input type="text" name="nomorKta" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Tempat Lahir <span class="text-red-500">*</span></label>
+              <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 uppercase" placeholder="KOTA LAHIR">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Tanggal Lahir <span class="text-red-500">*</span></label>
+              <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500">
+            </div>
           </div>
         </div>
 
-        <!-- UKURAN KAOS -->
-        <div>
-          <label class="block text-xs font-semibold uppercase text-gray-600 mb-2">Ukuran KAOS <span class="text-red-500">*</span></label>
-          <div class="mb-4 overflow-hidden rounded-xl border border-gray-200 shadow-sm bg-white p-3 text-center">
-            <img src="https://lh3.googleusercontent.com/d/11kNUj0C36Pigj_dfc_LTwS7AvyF81kbH" alt="Tabel Ukuran Kaos" class="w-full h-auto max-h-80 object-contain mx-auto rounded-lg">
-            <p class="text-[11px] text-gray-500 italic mt-2">NB: Kaos Putri berlengan panjang dan panjang kaos akan ditambah -/+ 10 cm</p>
+        <!-- SECTION 4: DATA PEMBINA -->
+        <div id="sectionPembina" class="hidden space-y-4 border-l-4 border-emerald-600 pl-4 py-2 bg-emerald-50/30 rounded-r-xl">
+          <h3 class="font-bold text-base text-emerald-950 flex items-center gap-2 border-b pb-2">
+            <i class="fa-solid fa-user-tie text-emerald-700"></i> Data Pembina Pendamping
+          </h3>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Nama Lengkap dan Gelar <span class="text-red-500">*</span></label>
+            <input type="text" name="namaPembina" id="namaPembina" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 uppercase font-medium" placeholder="NAMA KAKAK & GELAR">
           </div>
-          <div id="kaosContainer" class="grid grid-cols-4 sm:grid-cols-8 gap-2"></div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Nomor HP / WhatsApp Pembina <span class="text-red-500">*</span></label>
+            <p class="text-xs text-gray-500 mb-1">Diperlukan untuk dimasukkan ke dalam Grup Resmi WhatsApp Pembina</p>
+            <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500" placeholder="081234567890">
+          </div>
+        </div>
+
+        <!-- SECTION 5: IDENTITAS UMUM -->
+        <div id="sectionIdentitas" class="space-y-4 pt-2">
+          <h3 class="font-bold text-base text-amber-950 flex items-center gap-2 border-b pb-2">
+            <i class="fa-solid fa-building-columns text-amber-700"></i> Pangkalan & Domisili
+          </h3>
+          
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
+            <div class="flex gap-6">
+              <label class="inline-flex items-center cursor-pointer"><input type="radio" name="jenisKelamin" value="Laki-Laki" class="w-4 h-4 text-amber-700 focus:ring-amber-500"><span class="ml-2 text-sm text-gray-700 font-medium">Laki-Laki</span></label>
+              <label class="inline-flex items-center cursor-pointer"><input type="radio" name="jenisKelamin" value="Perempuan" class="w-4 h-4 text-amber-700 focus:ring-amber-500"><span class="ml-2 text-sm text-gray-700 font-medium">Perempuan</span></label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Asal Sekolah / Pangkalan <span class="text-red-500">*</span></label>
+            <input type="text" name="asalSekolah" id="asalSekolah" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 uppercase" placeholder="CONTOH: SDIT AL-IKHLAS">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Provinsi <span class="text-red-500">*</span></label>
+              <select name="provinsi" id="provinsi" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 bg-white font-medium text-sm">
+                <option value="">-- Pilih Provinsi --</option>
+                <option value="ACEH">ACEH</option>
+                <option value="SUMATERA UTARA">SUMATERA UTARA</option>
+                <option value="SUMATERA SELATAN">SUMATERA SELATAN</option>
+                <option value="SUMATERA BARAT">SUMATERA BARAT</option>
+                <option value="BENGKULU">BENGKULU</option>
+                <option value="RIAU">RIAU</option>
+                <option value="KEPULAUAN RIAU">KEPULAUAN RIAU</option>
+                <option value="JAMBI">JAMBI</option>
+                <option value="LAMPUNG">LAMPUNG</option>
+                <option value="BANGKA BELITUNG">BANGKA BELITUNG</option>
+                <option value="KALIMANTAN BARAT">KALIMANTAN BARAT</option>
+                <option value="KALIMANTAN TIMUR">KALIMANTAN TIMUR</option>
+                <option value="KALIMANTAN SELATAN">KALIMANTAN SELATAN</option>
+                <option value="KALIMANTAN TENGAH">KALIMANTAN TENGAH</option>
+                <option value="KALIMANTAN UTARA">KALIMANTAN UTARA</option>
+                <option value="BANTEN">BANTEN</option>
+                <option value="DKI JAKARTA">DKI JAKARTA</option>
+                <option value="JAWA BARAT">JAWA BARAT</option>
+                <option value="JAWA TENGAH">JAWA TENGAH</option>
+                <option value="DAERAH ISTIMEWA YOGYAKARTA">DAERAH ISTIMEWA YOGYAKARTA</option>
+                <option value="JAWA TIMUR">JAWA TIMUR</option>
+                <option value="BALI">BALI</option>
+                <option value="NUSA TENGGARA TIMUR">NUSA TENGGARA TIMUR</option>
+                <option value="NUSA TENGGARA BARAT">NUSA TENGGARA BARAT</option>
+                <option value="GORONTALO">GORONTALO</option>
+                <option value="SULAWESI BARAT">SULAWESI BARAT</option>
+                <option value="SULAWESI TENGAH">SULAWESI TENGAH</option>
+                <option value="SULAWESI UTARA">SULAWESI UTARA</option>
+                <option value="SULAWESI TENGGARA">SULAWESI TENGGARA</option>
+                <option value="SULAWESI SELATAN">SULAWESI SELATAN</option>
+                <option value="MALUKU UTARA">MALUKU UTARA</option>
+                <option value="MALUKU">MALUKU</option>
+                <option value="PAPUA BARAT">PAPUA BARAT</option>
+                <option value="PAPUA">PAPUA</option>
+                <option value="PAPUA TENGAH">PAPUA TENGAH</option>
+                <option value="PAPUA PEGUNUNGAN">PAPUA PEGUNUNGAN</option>
+                <option value="PAPUA SELATAN">PAPUA SELATAN</option>
+                <option value="PAPUA BARAT DAYA">PAPUA BARAT DAYA</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase text-gray-700 mb-1">Kota / Kabupaten <span class="text-red-500">*</span></label>
+              <input type="text" name="kotaKabupaten" id="kotaKabupaten" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 uppercase" placeholder="GUNAKAN KAPITAL">
+            </div>
+          </div>
+
+          <!-- SECTION 6: UKURAN KAOS -->
+          <div class="pt-2">
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-2 flex items-center gap-2">
+              <i class="fa-solid fa-shirt text-amber-700"></i> Ukuran Kaos Kegiatan <span class="text-red-500">*</span>
+            </label>
+
+            <div class="bg-amber-50/50 p-3 rounded-2xl border border-amber-200 mb-4 shadow-sm text-center">
+              <p class="text-xs font-semibold text-amber-900 mb-2">Panduan Standar Ukuran Kaos (Size Chart)</p>
+              <img id="imgUkuranKaos" 
+                   src="https://lh3.googleusercontent.com/d/11kNUj0C36Pigj_dfc_LTwS7AvyF81kbH" 
+                   alt="Panduan Ukuran Kaos Kembaranas III" 
+                   class="w-full max-w-lg mx-auto rounded-xl border border-amber-300 shadow-sm">
+            </div>
+
+            <div id="kaosContainer" class="grid grid-cols-4 sm:grid-cols-8 gap-2"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- WRAPPER PENDAFTARAN KOLEKTIF -->
+      <div id="wrapperKolektif" class="hidden space-y-4 border-l-4 border-emerald-700 pl-4 py-3 bg-emerald-50/50 rounded-r-2xl">
+        <h3 class="font-bold text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-200 pb-2">
+          <i class="fa-solid fa-users-gear text-emerald-700"></i> Pendaftaran Kolektif (Kontingen / Sangga)
+        </h3>
+
+        <div class="bg-amber-100/80 p-4 rounded-xl border border-amber-300/80 space-y-3">
+          <p class="font-bold text-amber-950 text-xs sm:text-sm flex items-center gap-2">
+            <i class="fa-solid fa-compass text-amber-700"></i> Petunjuk Pendaftaran Kolektif:
+          </p>
+          <ol class="list-decimal list-inside text-xs text-amber-900 space-y-1.5 font-medium">
+            <li>Unduh berkas template Excel pendaftaran kolektif melalui tombol di bawah.</li>
+            <li>Isikan seluruh data anggota sangga beserta pembina pendamping secara lengkap.</li>
+            <li>Simpan berkas dengan format: <b>"Nama Sekolah (Jumlah Pendaftar)"</b><br><span class="text-amber-800 italic pl-4">Contoh: SMA IT Al Amanah (8 Peserta + 1 Bindamping)</span></li>
+            <li>Unggah kembali file Excel yang telah diisi pada kolom di bawah ini.</li>
+          </ol>
+
+          <div class="pt-2">
+            <a href="https://docs.google.com/spreadsheets/d/1PPGXAepffqyF3shvOoi16FYfsPal1NUO/export?format=xlsx" 
+               target="_blank"
+               download="Template_Kolektif_KEMBARANAS_III.xlsx"
+               class="inline-flex items-center gap-2.5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md transition-all hover:shadow-lg transform active:scale-95 border border-emerald-600">
+              <i class="fa-solid fa-file-excel text-base text-emerald-300"></i>
+              <span>Unduh Template Kolektif (.xlsx)</span>
+              <i class="fa-solid fa-circle-arrow-down text-emerald-300 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-gray-700 mb-1 flex items-center gap-1.5">
+            <i class="fa-solid fa-cloud-arrow-up text-emerald-700"></i> Unggah Berkas Kolektif yang Telah Diisi <span class="text-red-500">*</span>
+          </label>
+          <input type="file" id="fileKolektif" accept=".xls,.xlsx,.pdf,.zip,.rar" class="w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-emerald-800 file:text-emerald-50 hover:file:bg-emerald-900 cursor-pointer border rounded-xl p-1 bg-white">
         </div>
       </div>
 
-      <!-- UPLOAD BUKTI TRANSFER -->
-      <div class="border-t pt-4">
-        <label class="block text-sm font-bold text-gray-800 mb-1">Upload Bukti Transfer <span class="text-red-500">*</span></label>
-        <p class="text-xs text-gray-500 mb-2">Format Nama File: <i>Asal Sekolah (Jumlah Peserta + Bindamping)</i><br>Contoh: <b>SMPIT AL-ILMU (10 orang).jpg</b></p>
-        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-100 file:text-amber-800 hover:file:bg-amber-200 cursor-pointer">
+      <!-- SECTION 7: UPLOAD BUKTI TRANSFER -->
+      <div class="border-t border-amber-200 pt-5">
+        <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
+          <i class="fa-solid fa-receipt text-amber-700"></i> Bukti Pembayaran / Transfer <span class="text-red-500">*</span>
+        </label>
+        <p class="text-xs text-gray-600 mb-2">
+          Format Nama File:<br>
+          • Sekolah / Kontingen : <b>SMPIT AL-ILMU (10 orang).jpg</b><br>
+          • Perorangan : <b>AHMAD MUJAHID LUNAS.jpg</b>
+        </p>
+        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-amber-800 file:text-amber-50 hover:file:bg-amber-900 cursor-pointer border rounded-xl p-1 bg-white">
       </div>
 
       <!-- SUBMIT BUTTON -->
       <div class="pt-4">
-        <button type="submit" id="submitBtn" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition-all duration-200 flex justify-center items-center">
+        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-amber-800 via-amber-900 to-emerald-900 hover:from-amber-900 hover:to-emerald-950 text-white font-bold py-4 px-6 rounded-2xl shadow-xl transition-all duration-200 flex justify-center items-center gap-2 text-base">
+          <i class="fa-solid fa-paper-plane"></i>
           <span>Kirim Pendaftaran</span>
         </button>
       </div>
@@ -140,100 +298,177 @@
   </div>
 
   <script>
-    // ⚠️ GANTI URL DI BAWAH INI DENGAN WEB APP URL HASIL DEPLOY APPS SCRIPT
-    const GAS_URL = "PASTE_URL_WEB_APP_APPS_SCRIPT_DISINI";
-
+    // Generate Ukuran Kaos Radio Buttons
     const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
     const kaosContainer = document.getElementById('kaosContainer');
     sizes.forEach(sz => {
       kaosContainer.innerHTML += `
-        <label class="text-center p-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-amber-500 transition-all block bg-white hover:bg-amber-50 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-100/80 has-[:checked]:ring-2 has-[:checked]:ring-amber-500">
-          <input type="radio" name="ukuranKaos" value="${sz}" required class="sr-only peer">
-          <span class="text-sm font-medium text-gray-700 peer-checked:text-amber-900 peer-checked:font-bold block">${sz}</span>
+        <label class="text-center p-2.5 border-2 rounded-xl cursor-pointer hover:border-amber-600 transition-all block bg-white shadow-sm">
+          <input type="radio" name="ukuranKaos" value="${sz}" class="sr-only peer">
+          <span class="text-sm font-bold text-gray-700 peer-checked:text-amber-800 peer-checked:font-extrabold block">${sz}</span>
         </label>
       `;
     });
 
-    function toggleSection(value) {
+    function toggleJenisPendaftaran(value) {
+      const wIndividu = document.getElementById('wrapperIndividu');
+      const wKolektif = document.getElementById('wrapperKolektif');
+      const fileKolektif = document.getElementById('fileKolektif');
+
+      if (value === 'Individu') {
+        wIndividu.classList.remove('hidden');
+        wKolektif.classList.add('hidden');
+        fileKolektif.removeAttribute('required');
+
+        document.querySelectorAll('input[name="statusPendaftaran"]').forEach(r => r.required = true);
+        document.getElementById('asalSekolah').required = true;
+        document.getElementById('provinsi').required = true;
+        document.getElementById('kotaKabupaten').required = true;
+        document.querySelectorAll('input[name="jenisKelamin"]').forEach(r => r.required = true);
+        document.querySelectorAll('input[name="ukuranKaos"]').forEach(r => r.required = true);
+
+      } else if (value === 'Kolektif') {
+        wKolektif.classList.remove('hidden');
+        wIndividu.classList.add('hidden');
+        fileKolektif.required = true;
+
+        document.querySelectorAll('input[name="statusPendaftaran"]').forEach(r => { r.required = false; r.checked = false; });
+        document.getElementById('sectionPeserta').classList.add('hidden');
+        document.getElementById('sectionPembina').classList.add('hidden');
+        document.getElementById('asalSekolah').required = false;
+        document.getElementById('provinsi').required = false;
+        document.getElementById('kotaKabupaten').required = false;
+        document.querySelectorAll('input[name="jenisKelamin"]').forEach(r => r.required = false);
+        document.querySelectorAll('input[name="ukuranKaos"]').forEach(r => r.required = false);
+      }
+    }
+
+    function toggleStatusPendaftaran(value) {
       const p = document.getElementById('sectionPeserta');
       const b = document.getElementById('sectionPembina');
-      const reqP = ['namaPeserta', 'tempatLahir', 'tanggalLahir'];
-      const reqB = ['namaPembina', 'nomorHp'];
+      
+      const inputP = ['namaPeserta', 'tempatLahir', 'tanggalLahir'];
+      const inputB = ['namaPembina', 'nomorHp'];
 
       if (value === 'Peserta') {
         p.classList.remove('hidden');
         b.classList.add('hidden');
-        reqP.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
-        reqB.forEach(id => document.getElementById(id).removeAttribute('required'));
+        inputP.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
+        inputB.forEach(id => document.getElementById(id).removeAttribute('required'));
       } else if (value === 'Pembina Pendamping') {
         b.classList.remove('hidden');
         p.classList.add('hidden');
-        reqB.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
-        reqP.forEach(id => document.getElementById(id).removeAttribute('required'));
+        inputB.forEach(id => document.getElementById(id).setAttribute('required', 'required'));
+        inputP.forEach(id => document.getElementById(id).removeAttribute('required'));
       }
     }
 
-    function handleFormSubmit(event) {
+    async function handleFormSubmit(form, event) {
       event.preventDefault();
-      const form = event.target;
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Memproses & Mengunggah Data...</span>`;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Memproses & Mengunggah Data...`;
 
-      const fileInput = document.getElementById('buktiTransfer');
-      const file = fileInput.files[0];
+      const jenis = form.jenisPendaftaran.value;
+      const formData = { jenisPendaftaran: jenis };
 
-      const formData = {
-        statusPendaftaran: form.statusPendaftaran.value,
-        namaLengkap: form.statusPendaftaran.value === 'Peserta' ? form.namaPeserta.value : form.namaPembina.value,
-        nomorKta: form.nomorKta ? form.nomorKta.value : '',
-        tempatLahir: form.tempatLahir ? form.tempatLahir.value : '',
-        tanggalLahir: form.tanggalLahir ? form.tanggalLahir.value : '',
-        nomorHp: form.nomorHp ? form.nomorHp.value : '',
-        jenisKelamin: form.jenisKelamin.value,
-        asalSekolah: form.asalSekolah.value,
-        provinsi: form.provinsi.value,
-        kotaKabupaten: form.kotaKabupaten.value,
-        ukuranKaos: form.ukuranKaos.value
-      };
-
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          formData.fileData = e.target.result;
-          formData.fileName = file.name;
-          sendDataToGAS(formData);
-        };
-        reader.readAsDataURL(file);
-      } else {
-        sendDataToGAS(formData);
+      if (jenis === 'Individu') {
+        const status = form.statusPendaftaran ? form.statusPendaftaran.value : '';
+        formData.statusPendaftaran = status;
+        formData.namaLengkap = (status === 'Peserta') ? (form.namaPeserta ? form.namaPeserta.value : '') : (form.namaPembina ? form.namaPembina.value : '');
+        formData.nomorKta = form.nomorKta ? form.nomorKta.value : '';
+        formData.tempatLahir = form.tempatLahir ? form.tempatLahir.value : '';
+        formData.tanggalLahir = form.tanggalLahir ? form.tanggalLahir.value : '';
+        formData.nomorHp = form.nomorHp ? form.nomorHp.value : '';
+        formData.jenisKelamin = form.jenisKelamin ? form.jenisKelamin.value : '';
+        formData.asalSekolah = form.asalSekolah ? form.asalSekolah.value : '';
+        formData.provinsi = form.provinsi ? form.provinsi.value : '';
+        formData.kotaKabupaten = form.kotaKabupaten ? form.kotaKabupaten.value : '';
+        formData.ukuranKaos = form.ukuranKaos ? form.ukuranKaos.value : '';
       }
+
+      // File Kolektif
+      const fileKolektifInput = document.getElementById('fileKolektif');
+      if (jenis === 'Kolektif' && fileKolektifInput && fileKolektifInput.files[0]) {
+        const fileK = await readFileAsBase64(fileKolektifInput.files[0]);
+        formData.fileKolektifData = fileK.data;
+        formData.fileKolektifName = fileK.name;
+      }
+
+      // File Bukti Transfer
+      const fileBuktiInput = document.getElementById('buktiTransfer');
+      if (fileBuktiInput && fileBuktiInput.files[0]) {
+        const fileB = await readFileAsBase64(fileBuktiInput.files[0]);
+        formData.fileBuktiData = fileB.data;
+        formData.fileBuktiName = fileB.name;
+      }
+
+      sendToServer(formData);
     }
 
-    function sendDataToGAS(formData) {
-      fetch(GAS_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-      .then(() => {
-        document.getElementById('regForm').classList.add('hidden');
-        const msgBox = document.getElementById('responseMsg');
-        msgBox.classList.remove('hidden');
-        msgBox.innerHTML = `
-          <div class="text-green-600 text-6xl mb-4">✓</div>
-          <h2 class="text-2xl font-bold text-gray-800 mb-2">Pendaftaran Berhasil!</h2>
-          <p class="text-gray-600">Data pendaftaran & berkas Anda telah berhasil tersimpan.</p>
-          <button onclick="location.reload()" class="mt-6 bg-amber-600 hover:bg-amber-700 text-white font-medium px-6 py-2.5 rounded-lg transition-all shadow-md">Isi Form Lagi</button>
-        `;
-      })
-      .catch(err => {
-        alert("Gagal mengirim data: " + err);
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve({ data: reader.result, name: file.name });
+        reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function sendToServer(formData) {
+      // ⚠️ GANTI DENGAN URL WEB APP HASIL DEPLOY GOOGLE APPS SCRIPT ANDA
+      const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxm_zr6fQkkUo6VKnXeaL51GJZdSTip2_7QMCe5Ta40KPQHeE4lXuI7__6p-WLYm9mXXg/exec";
+
+      if (SCRIPT_URL === "URL_WEB_APP_HASIL_DEPLOY_ANDA") {
+        alert("Harap masukkan SCRIPT_URL hasil deploy Google Apps Script Anda di file index.html!");
         const submitBtn = document.getElementById('submitBtn');
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '<span>Kirim Pendaftaran</span>';
-      });
+        submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> <span>Kirim Pendaftaran</span>`;
+        return;
+      }
+
+      try {
+        const response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8" // PENTING: Mencegah error CORS preflight di browser
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const res = await response.json();
+        const form = document.getElementById('regForm');
+        const msgBox = document.getElementById('responseMsg');
+        form.classList.add('hidden');
+        msgBox.classList.remove('hidden');
+
+        if (res.success) {
+          msgBox.innerHTML = `
+            <div class="text-emerald-700 text-6xl mb-4"><i class="fa-solid fa-circle-check"></i></div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Pendaftaran Berhasil!</h2>
+            <p class="text-gray-600 text-sm mb-6">${res.message}</p>
+            <button onclick="location.reload()" class="inline-flex items-center gap-2 bg-amber-800 text-white font-semibold px-6 py-3 rounded-xl hover:bg-amber-900 transition-all">
+              <i class="fa-solid fa-rotate-right"></i> Isi Formulir Lain
+            </button>
+          `;
+        } else {
+          msgBox.innerHTML = `
+            <div class="text-red-600 text-6xl mb-4"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Terjadi Kesalahan</h2>
+            <p class="text-red-600 text-sm mb-6">${res.message}</p>
+            <button onclick="location.reload()" class="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 transition-all">
+              Coba Lagi
+            </button>
+          `;
+        }
+      } catch (err) {
+        alert("Gagal mengirim data: " + err.toString());
+        const submitBtn = document.getElementById('submitBtn');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> <span>Kirim Pendaftaran</span>`;
+        }
+      }
     }
   </script>
 </body>
