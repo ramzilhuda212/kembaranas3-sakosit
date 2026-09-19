@@ -296,7 +296,7 @@
   </div>
 
   <script>
-    // PASTEKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
+    // URL WEB APP GOOGLE APPS SCRIPT
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxm_zr6fQkkUo6VKnXeaL51GJZdSTip2_7QMCe5Ta40KPQHeE4lXuI7__6p-WLYm9mXXg/exec";
 
     // Generate Ukuran Kaos Radio Buttons
@@ -420,6 +420,9 @@
       try {
         const response = await fetch(SCRIPT_URL, {
           method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
           body: JSON.stringify(formData)
         });
 
