@@ -61,6 +61,14 @@
     <!-- FORM CONTAINER -->
     <form id="regForm" class="p-6 sm:p-8 space-y-6" onsubmit="handleFormSubmit(this, event)">
       
+      <!-- EMAIL ADDRESS -->
+      <div>
+        <label class="block text-xs font-bold uppercase text-gray-700 mb-1 flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-amber-700"></i> Alamat Email <span class="text-red-500">*</span>
+        </label>
+        <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500" placeholder="contoh@gmail.com">
+      </div>
+
       <!-- SECTION 1: JENIS PENDAFTARAN -->
       <div class="bg-amber-50/80 p-5 rounded-2xl border border-amber-200">
         <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
@@ -297,7 +305,7 @@
 
   <script>
     // MASUKKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxrjTfXrF_6wWqPB7eRZTZcS4eL7u2m3_YfIMA0w7aETmZliUwMq3yGcn9YS1mWg7DKpQ/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx.../exec";
 
     // Generate Ukuran Kaos Radio Buttons
     const sizes = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
@@ -371,11 +379,15 @@
       submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Memproses & Mengunggah Data...`;
 
       const jenis = form.jenisPendaftaran.value;
-      const formData = { jenisPendaftaran: jenis };
+      const formData = {
+        jenisPendaftaran: jenis,
+        email: form.email ? form.email.value : ''
+      };
 
       if (jenis === 'Individu') {
         formData.statusPendaftaran = form.statusPendaftaran ? form.statusPendaftaran.value : '';
-        formData.namaLengkap = form.statusPendaftaran.value === 'Peserta' ? form.namaPeserta.value : form.namaPembina.value;
+        formData.namaPeserta = form.namaPeserta ? form.namaPeserta.value : '';
+        formData.namaPembina = form.namaPembina ? form.namaPembina.value : '';
         formData.nomorKta = form.nomorKta ? form.nomorKta.value : '';
         formData.tempatLahir = form.tempatLahir ? form.tempatLahir.value : '';
         formData.tanggalLahir = form.tanggalLahir ? form.tanggalLahir.value : '';
