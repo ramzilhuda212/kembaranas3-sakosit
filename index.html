@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-1.0, user-scalable=no">
   <title>Formulir KEMBARANAS III - 2026</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,42 +11,63 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    /* Latar Belakang Halaman Putih Bersih & Responsif */
+    html, body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #ffffff !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Motif Pramuka Khusus Wadah Formulir */
     .scout-pattern {
       background-color: #fefce8;
       background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#d97706 0.75px, #fef3c7 0.75px);
-      background-size: 30px 30px;
-      background-position: 0 0, 15px 15px;
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+
+    /* Mencegah iOS Safari Otomatis Zoom-In Saat Input Diklik */
+    @media screen and (max-width: 768px) {
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      select {
+        font-size: 16px !important;
+      }
     }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen py-6 px-3 sm:px-6 lg:px-8">
-  <!-- WADAH UTAMA FORMULIR DENGAN MOTIF KUNING BINTIK-BINTIK -->
-  <div class="max-w-3xl mx-auto scout-pattern rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-800/40">
+<body class="min-h-screen py-4 sm:py-8 px-2 sm:px-6 lg:px-8">
+  <!-- WADAH UTAMA FORMULIR DENGAN MOTIF PRAMUKA (BINTIK-BINTIK KUNING) -->
+  <div class="max-w-3xl mx-auto scout-pattern rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden border border-amber-800/30 sm:border-2">
     
     <!-- BANNER HEADER PRAMUKA -->
-    <div class="bg-gradient-to-r from-amber-950 via-amber-900 to-emerald-950 p-6 sm:p-8 text-white relative overflow-hidden border-b-4 border-amber-500 shadow-md">
+    <div class="bg-gradient-to-r from-amber-950 via-amber-900 to-emerald-950 p-5 sm:p-8 text-white relative overflow-hidden border-b-4 border-amber-500 shadow-md">
       <div class="absolute -right-6 -bottom-6 opacity-10 text-amber-100 pointer-events-none">
-        <i class="fa-solid fa-compass text-9xl"></i>
+        <i class="fa-solid fa-compass text-8xl sm:text-9xl"></i>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center gap-5 relative z-10">
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 relative z-10">
         <div class="flex-shrink-0 bg-white/20 p-2 rounded-2xl border border-amber-400/30 backdrop-blur-sm shadow-xl">
           <img id="logoKembaranas" 
                src="https://lh3.googleusercontent.com/d/1nJu5ER7lWJtRUCFPBUD1KDBGdfdCnpFh" 
                alt="Logo KEMBARANAS III 2026" 
-               class="w-24 h-24 sm:w-28 sm:h-28 object-contain rounded-xl">
+               class="w-20 h-20 sm:w-28 sm:h-28 object-contain rounded-xl">
         </div>
 
         <div class="text-center sm:text-left">
-          <span class="inline-flex items-center gap-1.5 bg-amber-500/30 text-amber-300 border border-amber-400/40 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">
+          <span class="inline-flex items-center gap-1.5 bg-amber-500/30 text-amber-300 border border-amber-400/40 text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">
             <i class="fa-solid fa-campground text-amber-400"></i> SAKO SIT Indonesia
           </span>
-          <h1 class="text-2xl sm:text-3xl font-extrabold text-amber-100 mt-2 tracking-wide uppercase">
+          <h1 class="text-xl sm:text-3xl font-extrabold text-amber-100 mt-2 tracking-wide uppercase leading-snug">
             Formulir Pendaftaran<br>
             <span class="text-amber-400">KEMBARANAS III - 2026</span>
           </h1>
-          <p class="text-amber-200/90 text-xs sm:text-sm mt-1 flex items-center justify-center sm:justify-start gap-1.5 font-medium">
+          <p class="text-amber-200/90 text-[11px] sm:text-sm mt-1 flex items-center justify-center sm:justify-start gap-1.5 font-medium">
             <i class="fa-solid fa-location-dot text-amber-400"></i> Bumi Perkemahan Lampung • 27 - 31 Oktober 2026
           </p>
         </div>
@@ -54,125 +75,125 @@
     </div>
 
     <!-- SUB-BANNER SALAM PRAMUKA -->
-    <div class="bg-amber-900 text-amber-100 px-6 py-2.5 text-xs sm:text-sm font-semibold flex justify-between items-center border-b border-amber-700">
-      <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-400"></i> Salam Pramuka!</span>
-      <span class="text-amber-200/80 italic font-normal">Perkemahan Bakti & Pengembaraan Nasional</span>
+    <div class="bg-amber-900 text-amber-100 px-4 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold flex justify-between items-center border-b border-amber-700">
+      <span class="flex items-center gap-1.5"><i class="fa-solid fa-award text-amber-400"></i> Salam Pramuka!</span>
+      <span class="text-amber-200/80 italic font-normal text-[11px] sm:text-xs">Perkemahan Bakti & Pengembaraan</span>
     </div>
 
     <!-- FORM CONTAINER -->
-    <form id="regForm" class="p-6 sm:p-8 space-y-6" onsubmit="handleFormSubmit(this, event)">
+    <form id="regForm" class="p-4 sm:p-8 space-y-5 sm:space-y-6" onsubmit="handleFormSubmit(this, event)">
       
       <!-- EMAIL ADDRESS -->
       <div>
         <label class="block text-xs font-bold uppercase text-gray-800 mb-1 flex items-center gap-1.5">
           <i class="fa-solid fa-envelope text-amber-800"></i> Alamat Email <span class="text-red-500">*</span>
         </label>
-        <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-500 shadow-sm" placeholder="contoh@gmail.com">
+        <input type="email" name="email" id="email" required class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white/90 focus:bg-white focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-400 shadow-sm text-sm" placeholder="contoh@gmail.com">
       </div>
 
       <!-- SECTION 1: JENIS PENDAFTARAN -->
-      <div class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-amber-300 shadow-sm">
+      <div class="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-amber-300/80 shadow-sm">
         <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
           <i class="fa-solid fa-users text-amber-800"></i> JENIS PENDAFTARAN <span class="text-red-500">*</span>
         </label>
         <p class="text-xs text-gray-700 mb-3">Pilih kategori keikutsertaan Anda</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border-2 border-amber-200/80 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <label class="flex items-center p-3 bg-amber-50/70 rounded-xl border-2 border-amber-200/80 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
             <input type="radio" name="jenisPendaftaran" value="Individu" required onchange="toggleJenisPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
-            <span class="ml-3 font-semibold text-gray-800 text-sm">Individu (Perorangan)</span>
+            <span class="ml-2.5 font-semibold text-gray-800 text-xs sm:text-sm">Individu (Perorangan)</span>
           </label>
-          <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border-2 border-amber-200/80 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
+          <label class="flex items-center p-3 bg-amber-50/70 rounded-xl border-2 border-amber-200/80 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
             <input type="radio" name="jenisPendaftaran" value="Kolektif" required onchange="toggleJenisPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
-            <span class="ml-3 font-semibold text-gray-800 text-sm">Kolektif (1 Sangga + Bindam)</span>
+            <span class="ml-2.5 font-semibold text-gray-800 text-xs sm:text-sm">Kolektif (1 Sangga + Bindam)</span>
           </label>
         </div>
       </div>
 
       <!-- WRAPPER PENDAFTARAN INDIVIDU -->
-      <div id="wrapperIndividu" class="hidden space-y-6">
+      <div id="wrapperIndividu" class="hidden space-y-5 sm:space-y-6">
         
         <!-- SECTION 2: STATUS PENDAFTARAN -->
-        <div class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-amber-300 shadow-sm">
+        <div class="bg-white/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-amber-300/80 shadow-sm">
           <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
             <i class="fa-solid fa-user-shield text-amber-800"></i> STATUS PENDAFTARAN <span class="text-red-500">*</span>
           </label>
           <p class="text-xs text-gray-700 mb-3">Pilih peran Anda dalam kegiatan perkemahan ini</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <label class="flex items-center p-3 bg-amber-50/70 rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
               <input type="radio" name="statusPendaftaran" value="Peserta" onchange="toggleStatusPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
-              <span class="ml-3 font-semibold text-gray-800 text-sm">Peserta</span>
+              <span class="ml-2.5 font-semibold text-gray-800 text-xs sm:text-sm">Peserta</span>
             </label>
-            <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
+            <label class="flex items-center p-3 bg-amber-50/70 rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
               <input type="radio" name="statusPendaftaran" value="Pembina Pendamping" onchange="toggleStatusPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
-              <span class="ml-3 font-semibold text-gray-800 text-sm">Pembina Pendamping</span>
+              <span class="ml-2.5 font-semibold text-gray-800 text-xs sm:text-sm">Pembina Pendamping</span>
             </label>
           </div>
         </div>
 
         <!-- SECTION 3: DATA PESERTA -->
-        <div id="sectionPeserta" class="hidden space-y-4 border-l-4 border-amber-600 pl-4 py-2 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-sm">
-          <h3 class="font-bold text-base text-amber-950 flex items-center gap-2 border-b border-amber-300/40 pb-2">
+        <div id="sectionPeserta" class="hidden space-y-3.5 border-l-4 border-amber-600 pl-3 sm:pl-4 py-2 bg-white/80 backdrop-blur-sm rounded-r-xl shadow-sm">
+          <h3 class="font-bold text-sm sm:text-base text-amber-950 flex items-center gap-2 border-b border-amber-300/40 pb-2">
             <i class="fa-solid fa-id-card text-amber-800"></i> Data Diri Peserta
           </h3>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nama Lengkap Peserta <span class="text-red-500">*</span></label>
-            <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-500" placeholder="GUNAKAN HURUF KAPITAL">
+            <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-400 text-sm" placeholder="GUNAKAN HURUF KAPITAL">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nomor KTA Pramuka (Wajib)</label>
-            <input type="text" name="nomorKta" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500">
+            <input type="text" name="nomorKta" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white focus:ring-2 focus:ring-amber-500 text-sm">
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Tempat Lahir <span class="text-red-500">*</span></label>
-              <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="KOTA LAHIR">
+              <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-400 text-sm" placeholder="KOTA LAHIR">
             </div>
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Tanggal Lahir <span class="text-red-500">*</span></label>
-              <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500">
+              <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white focus:ring-2 focus:ring-amber-500 text-sm">
             </div>
           </div>
         </div>
 
         <!-- SECTION 4: DATA PEMBINA -->
-        <div id="sectionPembina" class="hidden space-y-4 border-l-4 border-emerald-600 pl-4 py-2 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-sm">
-          <h3 class="font-bold text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-300/40 pb-2">
+        <div id="sectionPembina" class="hidden space-y-3.5 border-l-4 border-emerald-600 pl-3 sm:pl-4 py-2 bg-white/80 backdrop-blur-sm rounded-r-xl shadow-sm">
+          <h3 class="font-bold text-sm sm:text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-300/40 pb-2">
             <i class="fa-solid fa-user-tie text-emerald-800"></i> Data Pembina Pendamping
           </h3>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nama Lengkap dan Gelar <span class="text-red-500">*</span></label>
-            <input type="text" name="namaPembina" id="namaPembina" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-500" placeholder="NAMA KAKAK & GELAR">
+            <input type="text" name="namaPembina" id="namaPembina" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-400 text-sm" placeholder="NAMA KAKAK & GELAR">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nomor HP / WhatsApp Pembina <span class="text-red-500">*</span></label>
-            <p class="text-xs text-gray-600 mb-1">Diperlukan untuk dimasukkan ke dalam Grup Resmi WhatsApp Pembina</p>
-            <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 placeholder-gray-500" placeholder="081234567890">
+            <p class="text-[11px] text-gray-600 mb-1">Diperlukan untuk dimasukkan ke dalam Grup WhatsApp Pembina</p>
+            <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white focus:ring-2 focus:ring-amber-500 placeholder-gray-400 text-sm" placeholder="081234567890">
           </div>
         </div>
 
         <!-- SECTION 5: IDENTITAS UMUM -->
-        <div id="sectionIdentitas" class="space-y-4 pt-2">
-          <h3 class="font-bold text-base text-amber-950 flex items-center gap-2 border-b border-amber-300/40 pb-2">
+        <div id="sectionIdentitas" class="space-y-3.5 pt-1">
+          <h3 class="font-bold text-sm sm:text-base text-amber-950 flex items-center gap-2 border-b border-amber-300/40 pb-2">
             <i class="fa-solid fa-building-columns text-amber-800"></i> Pangkalan & Domisili
           </h3>
           
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
-            <div class="flex gap-6">
-              <label class="inline-flex items-center cursor-pointer"><input type="radio" name="jenisKelamin" value="Laki-Laki" class="w-4 h-4 text-amber-700 focus:ring-amber-500"><span class="ml-2 text-sm text-gray-800 font-semibold">Laki-Laki</span></label>
-              <label class="inline-flex items-center cursor-pointer"><input type="radio" name="jenisKelamin" value="Perempuan" class="w-4 h-4 text-amber-700 focus:ring-amber-500"><span class="ml-2 text-sm text-gray-800 font-semibold">Perempuan</span></label>
+            <div class="flex gap-5">
+              <label class="inline-flex items-center cursor-pointer"><input type="radio" name="jenisKelamin" value="Laki-Laki" class="w-4 h-4 text-amber-700 focus:ring-amber-500"><span class="ml-2 text-xs sm:text-sm text-gray-800 font-semibold">Laki-Laki</span></label>
+              <label class="inline-flex items-center cursor-pointer"><input type="radio" name="jenisKelamin" value="Perempuan" class="w-4 h-4 text-amber-700 focus:ring-amber-500"><span class="ml-2 text-xs sm:text-sm text-gray-800 font-semibold">Perempuan</span></label>
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Asal Sekolah / Pangkalan <span class="text-red-500">*</span></label>
-            <input type="text" name="asalSekolah" id="asalSekolah" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="CONTOH: SDIT AL-IKHLAS">
+            <input type="text" name="asalSekolah" id="asalSekolah" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white/90 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-400 text-sm" placeholder="CONTOH: SDIT AL-IKHLAS">
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Provinsi <span class="text-red-500">*</span></label>
-              <select name="provinsi" id="provinsi" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 font-medium text-sm text-gray-800">
+              <select name="provinsi" id="provinsi" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white/90 focus:bg-white focus:ring-2 focus:ring-amber-500 font-medium text-xs sm:text-sm text-gray-800">
                 <option value="">-- Pilih Provinsi --</option>
                 <option value="ACEH">ACEH</option>
                 <option value="SUMATERA UTARA">SUMATERA UTARA</option>
@@ -217,7 +238,7 @@
 
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Kota / Kabupaten <span class="text-red-500">*</span></label>
-              <input type="text" name="kotaKabupaten" id="kotaKabupaten" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="GUNAKAN KAPITAL">
+              <input type="text" name="kotaKabupaten" id="kotaKabupaten" class="w-full px-3.5 py-2.5 rounded-xl border border-amber-900/30 bg-white/90 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-400 text-sm" placeholder="GUNAKAN KAPITAL">
             </div>
           </div>
 
@@ -227,45 +248,45 @@
               <i class="fa-solid fa-shirt text-amber-800"></i> Ukuran Kaos Kegiatan <span class="text-red-500">*</span>
             </label>
 
-            <div class="bg-white/80 backdrop-blur-sm p-3 rounded-2xl border border-amber-300 mb-4 shadow-sm text-center">
-              <p class="text-xs font-semibold text-amber-900 mb-2">Panduan Standar Ukuran Kaos (Size Chart)</p>
+            <div class="bg-white/90 backdrop-blur-sm p-3 rounded-2xl border border-amber-300 mb-3 shadow-sm text-center">
+              <p class="text-[11px] sm:text-xs font-semibold text-amber-900 mb-2">Panduan Standar Ukuran Kaos (Size Chart)</p>
               <img id="imgUkuranKaos" 
                    src="https://lh3.googleusercontent.com/d/11kNUj0C36Pigj_dfc_LTwS7AvyF81kbH" 
                    alt="Panduan Ukuran Kaos Kembaranas III" 
                    class="w-full max-w-lg mx-auto rounded-xl border border-amber-300 shadow-sm">
             </div>
 
-            <div id="kaosContainer" class="grid grid-cols-4 sm:grid-cols-8 gap-2"></div>
+            <div id="kaosContainer" class="grid grid-cols-4 sm:grid-cols-8 gap-1.5 sm:gap-2"></div>
           </div>
         </div>
 
       </div>
 
       <!-- WRAPPER PENDAFTARAN KOLEKTIF -->
-      <div id="wrapperKolektif" class="hidden space-y-4 border-l-4 border-emerald-700 pl-4 py-3 bg-white/60 backdrop-blur-sm rounded-r-2xl shadow-sm">
-        <h3 class="font-bold text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-300/40 pb-2">
+      <div id="wrapperKolektif" class="hidden space-y-3.5 border-l-4 border-emerald-700 pl-3 sm:pl-4 py-3 bg-white/80 backdrop-blur-sm rounded-r-2xl shadow-sm">
+        <h3 class="font-bold text-sm sm:text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-300/40 pb-2">
           <i class="fa-solid fa-users-gear text-emerald-800"></i> Pendaftaran Kolektif (Kontingen / Sangga)
         </h3>
 
-        <div class="bg-amber-50/80 backdrop-blur-sm p-4 rounded-xl border border-amber-300 space-y-3">
-          <p class="font-bold text-amber-950 text-xs sm:text-sm flex items-center gap-2">
+        <div class="bg-amber-50/90 backdrop-blur-sm p-3.5 sm:p-4 rounded-xl border border-amber-300 space-y-2.5">
+          <p class="font-bold text-amber-950 text-xs sm:text-sm flex items-center gap-1.5">
             <i class="fa-solid fa-compass text-amber-800"></i> Petunjuk Pendaftaran Kolektif:
           </p>
-          <ol class="list-decimal list-inside text-xs text-amber-950 space-y-1.5 font-medium">
+          <ol class="list-decimal list-inside text-[11px] sm:text-xs text-amber-950 space-y-1 font-medium">
             <li>Unduh berkas template Excel pendaftaran kolektif melalui tombol di bawah.</li>
             <li>Isikan seluruh data anggota sangga beserta pembina pendamping secara lengkap.</li>
-            <li>Simpan berkas dengan format: <b>"Nama Sekolah (Jumlah Pendaftar)"</b><br><span class="text-amber-900 italic pl-4">Contoh: SMA IT Al Amanah (8 Peserta + 1 Bindamping)</span></li>
+            <li>Simpan berkas dengan format: <b>"Nama Sekolah (Jumlah Pendaftar)"</b><br><span class="text-amber-900 italic pl-3">Contoh: SMA IT Al Amanah (8 Peserta + 1 Bindamping)</span></li>
             <li>Unggah kembali file Excel yang telah diisi pada kolom di bawah ini.</li>
           </ol>
 
-          <div class="pt-2">
+          <div class="pt-1">
             <a href="https://docs.google.com/spreadsheets/d/1PPGXAepffqyF3shvOoi16FYfsPal1NUO/export?format=xlsx" 
                target="_blank"
                download="Template_Kolektif_KEMBARANAS_III.xlsx"
-               class="inline-flex items-center gap-2.5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-md transition-all hover:shadow-lg transform active:scale-95 border border-emerald-600">
-              <i class="fa-solid fa-file-excel text-base text-emerald-300"></i>
+               class="inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl shadow-md transition-all border border-emerald-600">
+              <i class="fa-solid fa-file-excel text-sm sm:text-base text-emerald-300"></i>
               <span>Unduh Template Kolektif (.xlsx)</span>
-              <i class="fa-solid fa-circle-arrow-down text-emerald-300 ml-1"></i>
+              <i class="fa-solid fa-circle-arrow-down text-emerald-300 ml-0.5"></i>
             </a>
           </div>
         </div>
@@ -274,26 +295,26 @@
           <label class="block text-xs font-bold uppercase text-gray-800 mb-1 flex items-center gap-1.5">
             <i class="fa-solid fa-cloud-arrow-up text-emerald-800"></i> Unggah Berkas Kolektif yang Telah Diisi <span class="text-red-500">*</span>
           </label>
-          <input type="file" id="fileKolektif" accept=".xls,.xlsx,.pdf,.zip,.rar" class="w-full text-sm text-gray-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-emerald-800 file:text-emerald-50 hover:file:bg-emerald-900 cursor-pointer border border-amber-900/30 rounded-xl p-1 bg-white/80">
+          <input type="file" id="fileKolektif" accept=".xls,.xlsx,.pdf,.zip,.rar" class="w-full text-xs sm:text-sm text-gray-700 file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-800 file:text-emerald-50 hover:file:bg-emerald-900 cursor-pointer border border-amber-900/30 rounded-xl p-1 bg-white">
         </div>
       </div>
 
       <!-- SECTION 7: UPLOAD BUKTI TRANSFER -->
-      <div class="border-t border-amber-300/60 pt-5">
-        <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
+      <div class="border-t border-amber-300/60 pt-4">
+        <label class="block text-xs sm:text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
           <i class="fa-solid fa-receipt text-amber-800"></i> Bukti Pembayaran / Transfer <span class="text-red-500">*</span>
         </label>
-        <p class="text-xs text-gray-700 mb-2">
+        <p class="text-[11px] sm:text-xs text-gray-700 mb-2">
           Format Nama File:<br>
           • Sekolah / Kontingen : <b>SMPIT AL-ILMU (10 orang).jpg</b><br>
           • Perorangan : <b>AHMAD MUJAHID LUNAS.jpg</b>
         </p>
-        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-sm text-gray-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-amber-800 file:text-amber-50 hover:file:bg-amber-900 cursor-pointer border border-amber-900/30 rounded-xl p-1 bg-white/80">
+        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-xs sm:text-sm text-gray-700 file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-800 file:text-amber-50 hover:file:bg-amber-900 cursor-pointer border border-amber-900/30 rounded-xl p-1 bg-white">
       </div>
 
       <!-- SUBMIT BUTTON -->
-      <div class="pt-4">
-        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-amber-800 via-amber-900 to-emerald-900 hover:from-amber-900 hover:to-emerald-950 text-white font-bold py-4 px-6 rounded-2xl shadow-xl transition-all duration-200 flex justify-center items-center gap-2 text-base">
+      <div class="pt-2 sm:pt-4">
+        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-amber-800 via-amber-900 to-emerald-900 hover:from-amber-900 hover:to-emerald-950 text-white font-bold py-3.5 sm:py-4 px-6 rounded-2xl shadow-xl transition-all duration-200 flex justify-center items-center gap-2 text-sm sm:text-base">
           <i class="fa-solid fa-paper-plane"></i>
           <span>Kirim Pendaftaran</span>
         </button>
@@ -301,11 +322,11 @@
     </form>
 
     <!-- SUCCESS / ERROR MESSAGE -->
-    <div id="responseMsg" class="hidden p-8 text-center bg-white/90"></div>
+    <div id="responseMsg" class="hidden p-6 sm:p-8 text-center bg-white/90"></div>
   </div>
 
   <script>
-    // MASUKKAN URL WEB APP GOOGLE APPS SCRIPT ANDA DI SINI
+    // URL WEB APP GOOGLE APPS SCRIPT
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxrjTfXrF_6wWqPB7eRZTZcS4eL7u2m3_YfIMA0w7aETmZliUwMq3yGcn9YS1mWg7DKpQ/exec";
 
     // Generate Ukuran Kaos Radio Buttons
@@ -313,9 +334,9 @@
     const kaosContainer = document.getElementById('kaosContainer');
     sizes.forEach(sz => {
       kaosContainer.innerHTML += `
-        <label class="text-center p-2.5 border border-amber-900/20 rounded-xl cursor-pointer hover:border-amber-600 transition-all block bg-white/80 hover:bg-white shadow-sm">
+        <label class="text-center p-2 border border-amber-900/20 rounded-xl cursor-pointer hover:border-amber-600 transition-all block bg-white/90 hover:bg-white shadow-sm">
           <input type="radio" name="ukuranKaos" value="${sz}" class="sr-only peer">
-          <span class="text-sm font-bold text-gray-800 peer-checked:text-amber-800 peer-checked:font-extrabold block">${sz}</span>
+          <span class="text-xs sm:text-sm font-bold text-gray-800 peer-checked:text-amber-800 peer-checked:font-extrabold block">${sz}</span>
         </label>
       `;
     });
@@ -442,19 +463,19 @@
 
         if (res.success) {
           msgBox.innerHTML = `
-            <div class="text-emerald-700 text-6xl mb-4"><i class="fa-solid fa-circle-check"></i></div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">Pendaftaran Berhasil!</h2>
-            <p class="text-gray-600 text-sm mb-6">${res.message}</p>
-            <button onclick="location.reload()" class="inline-flex items-center gap-2 bg-amber-800 text-white font-semibold px-6 py-3 rounded-xl hover:bg-amber-900 transition-all">
+            <div class="text-emerald-700 text-5xl sm:text-6xl mb-4"><i class="fa-solid fa-circle-check"></i></div>
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Pendaftaran Berhasil!</h2>
+            <p class="text-gray-600 text-xs sm:text-sm mb-6">${res.message}</p>
+            <button onclick="location.reload()" class="inline-flex items-center gap-2 bg-amber-800 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-amber-900 transition-all text-xs sm:text-sm">
               <i class="fa-solid fa-rotate-right"></i> Isi Formulir Lain
             </button>
           `;
         } else {
           msgBox.innerHTML = `
-            <div class="text-red-600 text-6xl mb-4"><i class="fa-solid fa-triangle-exclamation"></i></div>
-            <h2 class="text-2xl font-bold text-gray-800 mb-2">Terjadi Kesalahan</h2>
-            <p class="text-red-600 text-sm mb-6">${res.message}</p>
-            <button onclick="location.reload()" class="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-6 py-3 rounded-xl hover:bg-gray-900 transition-all">
+            <div class="text-red-600 text-5xl sm:text-6xl mb-4"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Terjadi Kesalahan</h2>
+            <p class="text-red-600 text-xs sm:text-sm mb-6">${res.message}</p>
+            <button onclick="location.reload()" class="inline-flex items-center gap-2 bg-gray-800 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-gray-900 transition-all text-xs sm:text-sm">
               Coba Lagi
             </button>
           `;
