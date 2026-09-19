@@ -20,12 +20,12 @@
     }
   </style>
 </head>
-<body class="scout-pattern min-h-screen py-6 px-3 sm:px-6 lg:px-8">
-  <!-- WADAH UTAMA FORMULIR TRANSPARAN -->
-  <div class="max-w-3xl mx-auto bg-white/20 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-800/30">
+<body class="bg-gray-100 min-h-screen py-6 px-3 sm:px-6 lg:px-8">
+  <!-- WADAH UTAMA FORMULIR DENGAN MOTIF KUNING BINTIK-BINTIK -->
+  <div class="max-w-3xl mx-auto scout-pattern rounded-3xl shadow-2xl overflow-hidden border-2 border-amber-800/40">
     
     <!-- BANNER HEADER PRAMUKA -->
-    <div class="bg-gradient-to-r from-amber-950/90 via-amber-900/90 to-emerald-950/90 p-6 sm:p-8 text-white relative overflow-hidden border-b-4 border-amber-500 backdrop-blur-sm">
+    <div class="bg-gradient-to-r from-amber-950 via-amber-900 to-emerald-950 p-6 sm:p-8 text-white relative overflow-hidden border-b-4 border-amber-500 shadow-md">
       <div class="absolute -right-6 -bottom-6 opacity-10 text-amber-100 pointer-events-none">
         <i class="fa-solid fa-compass text-9xl"></i>
       </div>
@@ -54,7 +54,7 @@
     </div>
 
     <!-- SUB-BANNER SALAM PRAMUKA -->
-    <div class="bg-amber-800/80 text-amber-100 px-6 py-2.5 text-xs sm:text-sm font-semibold flex justify-between items-center border-b border-amber-700/50 backdrop-blur-sm">
+    <div class="bg-amber-900 text-amber-100 px-6 py-2.5 text-xs sm:text-sm font-semibold flex justify-between items-center border-b border-amber-700">
       <span class="flex items-center gap-2"><i class="fa-solid fa-award text-amber-400"></i> Salam Pramuka!</span>
       <span class="text-amber-200/80 italic font-normal">Perkemahan Bakti & Pengembaraan Nasional</span>
     </div>
@@ -67,21 +67,21 @@
         <label class="block text-xs font-bold uppercase text-gray-800 mb-1 flex items-center gap-1.5">
           <i class="fa-solid fa-envelope text-amber-800"></i> Alamat Email <span class="text-red-500">*</span>
         </label>
-        <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-500" placeholder="contoh@gmail.com">
+        <input type="email" name="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 transition-all placeholder-gray-500 shadow-sm" placeholder="contoh@gmail.com">
       </div>
 
       <!-- SECTION 1: JENIS PENDAFTARAN -->
-      <div class="bg-amber-50/40 backdrop-blur-sm p-5 rounded-2xl border border-amber-300/50">
+      <div class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-amber-300 shadow-sm">
         <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
           <i class="fa-solid fa-users text-amber-800"></i> JENIS PENDAFTARAN <span class="text-red-500">*</span>
         </label>
         <p class="text-xs text-gray-700 mb-3">Pilih kategori keikutsertaan Anda</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <label class="flex items-center p-3.5 bg-white/40 backdrop-blur-sm rounded-xl border-2 border-amber-200/60 cursor-pointer hover:border-amber-500 hover:bg-white/70 transition-all shadow-sm">
+          <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border-2 border-amber-200/80 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
             <input type="radio" name="jenisPendaftaran" value="Individu" required onchange="toggleJenisPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
             <span class="ml-3 font-semibold text-gray-800 text-sm">Individu (Perorangan)</span>
           </label>
-          <label class="flex items-center p-3.5 bg-white/40 backdrop-blur-sm rounded-xl border-2 border-amber-200/60 cursor-pointer hover:border-amber-500 hover:bg-white/70 transition-all shadow-sm">
+          <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border-2 border-amber-200/80 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
             <input type="radio" name="jenisPendaftaran" value="Kolektif" required onchange="toggleJenisPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
             <span class="ml-3 font-semibold text-gray-800 text-sm">Kolektif (1 Sangga + Bindam)</span>
           </label>
@@ -92,17 +92,17 @@
       <div id="wrapperIndividu" class="hidden space-y-6">
         
         <!-- SECTION 2: STATUS PENDAFTARAN -->
-        <div class="bg-amber-50/40 backdrop-blur-sm p-5 rounded-2xl border border-amber-300/50">
+        <div class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-amber-300 shadow-sm">
           <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
             <i class="fa-solid fa-user-shield text-amber-800"></i> STATUS PENDAFTARAN <span class="text-red-500">*</span>
           </label>
           <p class="text-xs text-gray-700 mb-3">Pilih peran Anda dalam kegiatan perkemahan ini</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <label class="flex items-center p-3.5 bg-white/40 backdrop-blur-sm rounded-xl border border-amber-200/60 cursor-pointer hover:border-amber-500 hover:bg-white/70 transition-all shadow-sm">
+            <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
               <input type="radio" name="statusPendaftaran" value="Peserta" onchange="toggleStatusPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
               <span class="ml-3 font-semibold text-gray-800 text-sm">Peserta</span>
             </label>
-            <label class="flex items-center p-3.5 bg-white/40 backdrop-blur-sm rounded-xl border border-amber-200/60 cursor-pointer hover:border-amber-500 hover:bg-white/70 transition-all shadow-sm">
+            <label class="flex items-center p-3.5 bg-amber-50/60 backdrop-blur-sm rounded-xl border border-amber-200 cursor-pointer hover:border-amber-500 hover:bg-white transition-all shadow-sm">
               <input type="radio" name="statusPendaftaran" value="Pembina Pendamping" onchange="toggleStatusPendaftaran(this.value)" class="w-4 h-4 text-amber-700 focus:ring-amber-500">
               <span class="ml-3 font-semibold text-gray-800 text-sm">Pembina Pendamping</span>
             </label>
@@ -110,43 +110,43 @@
         </div>
 
         <!-- SECTION 3: DATA PESERTA -->
-        <div id="sectionPeserta" class="hidden space-y-4 border-l-4 border-amber-600 pl-4 py-2 bg-amber-50/20 backdrop-blur-sm rounded-r-xl">
+        <div id="sectionPeserta" class="hidden space-y-4 border-l-4 border-amber-600 pl-4 py-2 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-sm">
           <h3 class="font-bold text-base text-amber-950 flex items-center gap-2 border-b border-amber-300/40 pb-2">
             <i class="fa-solid fa-id-card text-amber-800"></i> Data Diri Peserta
           </h3>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nama Lengkap Peserta <span class="text-red-500">*</span></label>
-            <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-500" placeholder="GUNAKAN HURUF KAPITAL">
+            <input type="text" name="namaPeserta" id="namaPeserta" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-500" placeholder="GUNAKAN HURUF KAPITAL">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nomor KTA Pramuka (Wajib)</label>
-            <input type="text" name="nomorKta" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500">
+            <input type="text" name="nomorKta" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500">
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Tempat Lahir <span class="text-red-500">*</span></label>
-              <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="KOTA LAHIR">
+              <input type="text" name="tempatLahir" id="tempatLahir" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="KOTA LAHIR">
             </div>
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Tanggal Lahir <span class="text-red-500">*</span></label>
-              <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500">
+              <input type="date" name="tanggalLahir" id="tanggalLahir" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500">
             </div>
           </div>
         </div>
 
         <!-- SECTION 4: DATA PEMBINA -->
-        <div id="sectionPembina" class="hidden space-y-4 border-l-4 border-emerald-600 pl-4 py-2 bg-emerald-50/20 backdrop-blur-sm rounded-r-xl">
+        <div id="sectionPembina" class="hidden space-y-4 border-l-4 border-emerald-600 pl-4 py-2 bg-white/60 backdrop-blur-sm rounded-r-xl shadow-sm">
           <h3 class="font-bold text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-300/40 pb-2">
             <i class="fa-solid fa-user-tie text-emerald-800"></i> Data Pembina Pendamping
           </h3>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nama Lengkap dan Gelar <span class="text-red-500">*</span></label>
-            <input type="text" name="namaPembina" id="namaPembina" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-500" placeholder="NAMA KAKAK & GELAR">
+            <input type="text" name="namaPembina" id="namaPembina" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase font-medium placeholder-gray-500" placeholder="NAMA KAKAK & GELAR">
           </div>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Nomor HP / WhatsApp Pembina <span class="text-red-500">*</span></label>
             <p class="text-xs text-gray-600 mb-1">Diperlukan untuk dimasukkan ke dalam Grup Resmi WhatsApp Pembina</p>
-            <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 placeholder-gray-500" placeholder="081234567890">
+            <input type="tel" name="nomorHp" id="nomorHp" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 placeholder-gray-500" placeholder="081234567890">
           </div>
         </div>
 
@@ -166,13 +166,13 @@
 
           <div>
             <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Asal Sekolah / Pangkalan <span class="text-red-500">*</span></label>
-            <input type="text" name="asalSekolah" id="asalSekolah" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="CONTOH: SDIT AL-IKHLAS">
+            <input type="text" name="asalSekolah" id="asalSekolah" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="CONTOH: SDIT AL-IKHLAS">
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Provinsi <span class="text-red-500">*</span></label>
-              <select name="provinsi" id="provinsi" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 font-medium text-sm text-gray-800">
+              <select name="provinsi" id="provinsi" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 font-medium text-sm text-gray-800">
                 <option value="">-- Pilih Provinsi --</option>
                 <option value="ACEH">ACEH</option>
                 <option value="SUMATERA UTARA">SUMATERA UTARA</option>
@@ -217,7 +217,7 @@
 
             <div>
               <label class="block text-xs font-bold uppercase text-gray-800 mb-1">Kota / Kabupaten <span class="text-red-500">*</span></label>
-              <input type="text" name="kotaKabupaten" id="kotaKabupaten" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/20 bg-white/50 backdrop-blur-sm focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="GUNAKAN KAPITAL">
+              <input type="text" name="kotaKabupaten" id="kotaKabupaten" class="w-full px-4 py-2.5 rounded-xl border border-amber-900/30 bg-white/80 focus:bg-white focus:ring-2 focus:ring-amber-500 uppercase placeholder-gray-500" placeholder="GUNAKAN KAPITAL">
             </div>
           </div>
 
@@ -227,7 +227,7 @@
               <i class="fa-solid fa-shirt text-amber-800"></i> Ukuran Kaos Kegiatan <span class="text-red-500">*</span>
             </label>
 
-            <div class="bg-amber-50/40 backdrop-blur-sm p-3 rounded-2xl border border-amber-300/50 mb-4 shadow-sm text-center">
+            <div class="bg-white/80 backdrop-blur-sm p-3 rounded-2xl border border-amber-300 mb-4 shadow-sm text-center">
               <p class="text-xs font-semibold text-amber-900 mb-2">Panduan Standar Ukuran Kaos (Size Chart)</p>
               <img id="imgUkuranKaos" 
                    src="https://lh3.googleusercontent.com/d/11kNUj0C36Pigj_dfc_LTwS7AvyF81kbH" 
@@ -242,12 +242,12 @@
       </div>
 
       <!-- WRAPPER PENDAFTARAN KOLEKTIF -->
-      <div id="wrapperKolektif" class="hidden space-y-4 border-l-4 border-emerald-700 pl-4 py-3 bg-emerald-50/20 backdrop-blur-sm rounded-r-2xl">
+      <div id="wrapperKolektif" class="hidden space-y-4 border-l-4 border-emerald-700 pl-4 py-3 bg-white/60 backdrop-blur-sm rounded-r-2xl shadow-sm">
         <h3 class="font-bold text-base text-emerald-950 flex items-center gap-2 border-b border-emerald-300/40 pb-2">
           <i class="fa-solid fa-users-gear text-emerald-800"></i> Pendaftaran Kolektif (Kontingen / Sangga)
         </h3>
 
-        <div class="bg-amber-100/40 backdrop-blur-sm p-4 rounded-xl border border-amber-300/60 space-y-3">
+        <div class="bg-amber-50/80 backdrop-blur-sm p-4 rounded-xl border border-amber-300 space-y-3">
           <p class="font-bold text-amber-950 text-xs sm:text-sm flex items-center gap-2">
             <i class="fa-solid fa-compass text-amber-800"></i> Petunjuk Pendaftaran Kolektif:
           </p>
@@ -274,12 +274,12 @@
           <label class="block text-xs font-bold uppercase text-gray-800 mb-1 flex items-center gap-1.5">
             <i class="fa-solid fa-cloud-arrow-up text-emerald-800"></i> Unggah Berkas Kolektif yang Telah Diisi <span class="text-red-500">*</span>
           </label>
-          <input type="file" id="fileKolektif" accept=".xls,.xlsx,.pdf,.zip,.rar" class="w-full text-sm text-gray-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-emerald-800 file:text-emerald-50 hover:file:bg-emerald-900 cursor-pointer border border-amber-900/20 rounded-xl p-1 bg-white/50 backdrop-blur-sm">
+          <input type="file" id="fileKolektif" accept=".xls,.xlsx,.pdf,.zip,.rar" class="w-full text-sm text-gray-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-emerald-800 file:text-emerald-50 hover:file:bg-emerald-900 cursor-pointer border border-amber-900/30 rounded-xl p-1 bg-white/80">
         </div>
       </div>
 
       <!-- SECTION 7: UPLOAD BUKTI TRANSFER -->
-      <div class="border-t border-amber-300/40 pt-5">
+      <div class="border-t border-amber-300/60 pt-5">
         <label class="block text-sm font-bold text-amber-950 mb-1 flex items-center gap-2">
           <i class="fa-solid fa-receipt text-amber-800"></i> Bukti Pembayaran / Transfer <span class="text-red-500">*</span>
         </label>
@@ -288,7 +288,7 @@
           • Sekolah / Kontingen : <b>SMPIT AL-ILMU (10 orang).jpg</b><br>
           • Perorangan : <b>AHMAD MUJAHID LUNAS.jpg</b>
         </p>
-        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-sm text-gray-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-amber-800 file:text-amber-50 hover:file:bg-amber-900 cursor-pointer border border-amber-900/20 rounded-xl p-1 bg-white/50 backdrop-blur-sm">
+        <input type="file" id="buktiTransfer" required accept="image/*,.pdf" class="w-full text-sm text-gray-700 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-amber-800 file:text-amber-50 hover:file:bg-amber-900 cursor-pointer border border-amber-900/30 rounded-xl p-1 bg-white/80">
       </div>
 
       <!-- SUBMIT BUTTON -->
@@ -301,7 +301,7 @@
     </form>
 
     <!-- SUCCESS / ERROR MESSAGE -->
-    <div id="responseMsg" class="hidden p-8 text-center"></div>
+    <div id="responseMsg" class="hidden p-8 text-center bg-white/90"></div>
   </div>
 
   <script>
@@ -313,7 +313,7 @@
     const kaosContainer = document.getElementById('kaosContainer');
     sizes.forEach(sz => {
       kaosContainer.innerHTML += `
-        <label class="text-center p-2.5 border border-amber-900/20 rounded-xl cursor-pointer hover:border-amber-600 transition-all block bg-white/40 backdrop-blur-sm hover:bg-white/70 shadow-sm">
+        <label class="text-center p-2.5 border border-amber-900/20 rounded-xl cursor-pointer hover:border-amber-600 transition-all block bg-white/80 hover:bg-white shadow-sm">
           <input type="radio" name="ukuranKaos" value="${sz}" class="sr-only peer">
           <span class="text-sm font-bold text-gray-800 peer-checked:text-amber-800 peer-checked:font-extrabold block">${sz}</span>
         </label>
